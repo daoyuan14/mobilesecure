@@ -1,0 +1,26 @@
+<!-- Homepage, http://nupter-cn.appspot.com -->
+<!-- 注意不要被编辑器本身的编码所设置，用ASCII -->
+{% extends "base.html" %}
+
+{% block title %}HomePage - MobileSecure{% endblock title %}
+
+{% block css %}
+<link href="../static/css/index.css" rel="stylesheet" type="text/css" />
+{% endblock css %}
+
+{% block content %}
+    <p>Hi, <b>{{ username }}</b>! Welcome:)</p>
+    <p><a href="{{ url }}">Logout</a></p>
+<!-- 应当不大好判断entity.sim的，因为会报NoneType' object has no attribute 'sim'，no test -->
+    <hr />
+    {% if entity %}
+    <p>您注册时的初始SIM卡号为：</p>
+    <table width="300" border="0" cellspacing="1" bgcolor="#CCCCCC" valign="middle">
+        <tr>
+            <th id="Tr-font1"align="center">{{ entity.sim }}</th>
+        </tr>
+    </table>
+    {% else %}
+    <p>您的账户还没有在手机客户端上进行注册，您应该首先装上手机客户端再来浏览该服务端！</p>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--
+	<string-array name="row_icons">
+		<item>backup</item>
+		<item>restore</item>
+		<item>lock</item>
+		<item>wipe</item>
+	</string-array>
+	-->
+	<!--
+	<integer-array name="row_icons">
+		<item>R.drawable.backup</item>
+	</integer-array>
+	-->
+	<string-array name="row_texts">
+		<item>Backup</item>
+		<item>Lock Now</item>
+		<item>Wipe Now</item>
+	</string-array>
+	<string-array name="row_contents">
+		<item>Backup Contacts, Sms and Call Logs!</item>
+		<item>Lock down the phone Now!</item>
+		<item>Wipe all your data Now!</item>
+	</string-array>
+	<string-array name="backup_row_texts">
+		<item>Backup SMS</item>
+		<item>Backup Contacts</item>
+		<item>Backup Call logs</item>
+	</string-array>
+	<string-array name="backup_row_contents">
+		<item>Backup your sms to the server!</item>
+		<item>Backup your contacts to the server!</item>
+		<item>Backup your call logs to the server!</item>
+	</string-array>
+	<string-array name="wipe_row_texts">
+		<item>Wipe SMS</item>
+		<item>Wipe Contacts</item>
+		<item>Wipe Call Logs</item>
+	</string-array>
+	<string-array name="wipe_row_contents">
+		<item>Wipe out all your sms!</item>
+		<item>Wipe out all your contacts!</item>
+		<item>Wipe out all your call logs!</item>
+	</string-array>
+</resources>

@@ -1,0 +1,32 @@
+<!-- WipePage, http://nupter-cn.appspot.com/wipe -->
+{% extends "base.html" %}
+
+{% block title %}Wipe - MobileSecure{% endblock title %}
+
+{% block content %}
+<p><strong><font color="#990000" size="+1"> 删除 </font></strong>手机中的数据</p>
+<hr />
+<p>请选择删除一个或多个类别的资料:</p>
+<!-- our wipe form -->
+<form action="/cmd.do" method="get">
+    <!-- contact checkbox -->
+	<input name="contact" type="checkbox" value="Contact" />&nbsp;&nbsp;
+	<img src="../static/images/contacts.gif" width="20" height="20" />&nbsp;通讯录
+	<br />
+	<!-- sms checkbox -->
+	<input name="sms" type="checkbox" value="Sms" />&nbsp;&nbsp;
+	<img src="../static/images/sms.gif" width="20" height="20" />&nbsp;短消息
+	<br />
+	<!-- calllog checkbox -->
+	<input name="calllog" type="checkbox" value="Calllog" />&nbsp;&nbsp;
+	<img src="../static/images/calllogs.gif" width="20" height="20" />&nbsp;通话记录
+	<br /><br />
+	<!-- wipe submit -->
+	<input name="delete" type="submit" value="Delete"/>
+</form>
+<hr />
+<div>
+<strong>警告：</strong>
+您选择的手机数据一旦删除，便无法恢复！
+</div>
+{% endblock content %}

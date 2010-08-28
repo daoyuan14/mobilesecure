@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello, MobileSecure!</string>
+    <string name="app_name">MobileSecure</string>
+    <string name="email">Please enter your email:</string>
+    <string name="pswd">Please enter 6 digit PIN:</string>
+    <string name="login_btn">OK</string>
+    <string name="title1">Mobile</string>
+    <string name="title2">Secure</string>
+    <string name="backup">BackUp</string>
+    <string name="lock">This phone is being tracked. Please contact clzqwdy@gmail.com to return!</string>
+</resources>

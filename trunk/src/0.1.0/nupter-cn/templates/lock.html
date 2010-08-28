@@ -1,0 +1,69 @@
+<!-- LockPage, http://nupter-cn.appspot.com/lock -->
+<!-- textarea先不要让它可编辑了 -->
+{% extends "base.html" %}
+
+{% block title %}Lock - MobileSecure{% endblock title %}
+
+{% block css %}
+<link href="../static/css/lock.css" rel="stylesheet" type="text/css" />
+{% endblock css %}
+
+{% block content %}
+<p><strong><font color="#990000" size="+1"> 锁定 </font>您的手机 </strong></p>
+<hr />
+<div>
+<table width="428" border="0">
+  <tr>
+    <td>
+        <p>您手机的当前SIM卡号为：</p>
+        <table width="300" border="0" cellspacing="1" bgcolor="#CCCCCC" valign="middle">
+            <tr>
+                <th id="Tr-font1" align="center">{{ lock.num }}</th>
+            </tr>
+        </table>
+        {% ifequal lock.lock "true" %}
+        <p>您手机的当前状态为： <strong><font color="#e20">锁定</font></strong>
+        </p>
+        {% endifequal %}
+        {% ifequal lock.lock "false" %}
+        <p>您手机的当前状态为： <strong><font color="#0e2">未锁定</font></strong>
+        </p>
+        {% endifequal %}
+    </td>
+    <td>
+        {% ifequal lock.lock "true" %}
+        <img src="../static/images/locked.jpg" />
+        {% endifequal %}
+        {% ifequal lock.lock "false" %}
+        <img src="../static/images/unlocked2.png" />
+        {% endifequal %}
+    </td>
+  </tr>
+</table>
+</div>
+<hr />
+<p>要显示的<b> 锁定消息 </b>为：</p>
+<!-- textarea -->
+<textarea name="edit" rows="3" cols="40" readonly="readonly" onkeyup="">  This phone is being tracked. Please contact {{ email }} to return!</textarea>
+<!-- our lock form -->
+<form action="/cmd.do" method="get">
+    {% ifequal lock.lock "true" %}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- <input name="" type="button" value="锁定" /> -->
+    <input name="lock" type="submit" value="Lock" disabled="disabled"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input name="unlock" type="submit" value="Unlock"/>
+    {% endifequal %}
+    {% ifequal lock.lock "false" %}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input name="lock" type="submit" value="Lock"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input name="unlock" type="submit" value="Unlock" disabled="disabled"/>
+    {% endifequal %}
+</form>
+<hr />
+<div>
+<strong>提示：</strong>
+您可以输入您的密码, 来对您的手机进行解锁.
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+.processing {
+    background-image: url("static/images/bigloading.gif");
+}
+
+#cmd-font1 {
+	font-size:18px;
+	font-weight:bold;
+	background-color:#E6FFEC;
+	color:#00E83A;
+	overflow:hidden;
+	border-color:#00E83A;
+	width:700px;
+	height:50px; }
+    
+#cmd-font2 {
+	font-size:18px;
+	font-weight:bold;
+	background-color:#FFEEEE;
+	color:#FF3C3C;
+	overflow:hidden;
+	border-color:#FF3C3C;
+	width:700px;
+	height:50px; }

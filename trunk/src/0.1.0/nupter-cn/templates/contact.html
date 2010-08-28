@@ -1,0 +1,28 @@
+<!-- display Contacts, http://nupter-cn.appspot.com/contact -->
+{% extends "base.html" %}
+  
+{% block title %}Contacts - MobileSecure{% endblock title %}
+
+{% block content %}
+<p><strong>加载您的<font color="#990000" size="+1"> 通讯录 </font>到网页</strong></p>
+<hr />
+<p><strong>您的通讯录为：</strong></p>
+<table border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+    <thead>
+        <tr bgcolor="#FFFFFF">
+            <th align="center" id="content-head" scope="col">姓名(Name)</th>
+             <th align="center" id="content-head" scope="col">手机号(Phone Number)</th>
+        </tr>
+    </thead>
+    <tbody >
+        <!-- 如果contacts为空，就自然不循环了 -->
+        {% for contact in contacts %}
+        <tr bgcolor="#FFFFFF">
+            <td align="center" id="content-td1">{{ contact.name }}</td>
+            <td align="center" id="content-td2">{{ contact.phone }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot></tfoot>
+</table>
+{% endblock content %}

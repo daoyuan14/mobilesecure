@@ -1,0 +1,31 @@
+<!-- display Contacts, http://nupter-cn.appspot.com/sms -->
+{% extends "base.html" %}
+  
+{% block title %}Sms - MobileSecure{% endblock title %}
+
+{% block content %}
+<p><strong>加载您的<font color="#990000" size="+1"> 短消息 </font>到网页</strong></p>
+<hr />
+<p><strong>您的短消息为：</strong></p>
+<table border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+    <thead>
+        <tr bgcolor="#FFFFFF">
+            <th align="center" id="content-head" scope="col">发信人</th>
+            <th align="center" id="content-head" scope="col">手机号</th>
+            <th align="center" id="content-head" scope="col">日期</th>
+            <th align="center" id="content-head" scope="col">消息内容</th>
+        </tr>
+    </thead>
+    <tbody >
+        {% for sms in Sms %}
+        <tr bgcolor="#FFFFFF">
+            <td align="center" id="content-td1">{{ sms.name }}</td>
+            <td align="center" id="content-td2">{{ sms.number }}</td>
+            <td align="center" id="content-td1">{{ sms.date }}</td>
+            <td align="center" id="content-td2">{{ sms.body }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot></tfoot>
+</table>
+{% endblock content %}

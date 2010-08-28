@@ -1,0 +1,30 @@
+application: nupter-cn
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+# or just this: [/favicon.ico] ?
+- url: /favicon\.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon.ico
+  mime_type: image/x-icon
+
+# still have a problem
+- url: /static
+  static_dir: static
+  
+# all the rpc call
+# such as, [/rpc/ ] [/rpc/lock]
+#- url: /rpc/.*
+#  script: rpc.py
+  
+# just first give a general?
+# it judge from top to down?
+- url: .*
+#  script: rpc.py
+  script: infosec.py
+  secure: always
+  
+#- url: /rpc/backup
+#  script: backup.py
